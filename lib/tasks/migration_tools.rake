@@ -188,8 +188,8 @@ namespace :redmine_git_hosting do
   end
 
 
-  desc "Migrate to v1.1.0 version"
-  task :migrate_to_v1_1 => [:environment] do
+  desc "Migrate to v2.0.0 version"
+  task :migrate_to_v2 => [:environment] do
     ## First step : reset migrations in DB
     task('redmine_git_hosting:migration_tools:reset_migration_numbers').invoke
   end
