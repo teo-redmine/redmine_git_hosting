@@ -1,15 +1,11 @@
 class CreateGitCaches < ActiveRecord::Migration
-  def up
+  def change
     create_table :git_caches do |t|
       t.string :repo_identifier
       t.text   :command, :text
       t.binary :command_output, limit: 16777216
 
-      t.timestamps
+      t.timestamps null: false
     end
-  end
-
-  def down
-    drop_table :git_caches
   end
 end

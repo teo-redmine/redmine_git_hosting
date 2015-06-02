@@ -1,5 +1,5 @@
 class CreateRepositoryMirrors < ActiveRecord::Migration
-  def up
+  def change
     create_table :repository_mirrors do |t|
       t.integer :repository_id
       t.string  :url
@@ -12,9 +12,5 @@ class CreateRepositoryMirrors < ActiveRecord::Migration
 
     add_index :repository_mirrors, :repository_id
     add_index :repository_mirrors, [ :url, :repository_id ], unique: true
-  end
-
-  def down
-    drop_table :repository_mirrors
   end
 end

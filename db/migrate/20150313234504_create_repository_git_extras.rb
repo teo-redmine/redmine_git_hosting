@@ -1,5 +1,5 @@
 class CreateRepositoryGitExtras < ActiveRecord::Migration
-  def up
+  def change
     create_table :repository_git_extras do |t|
       t.integer :repository_id
       t.string  :default_branch,   default: 'master'
@@ -9,13 +9,10 @@ class CreateRepositoryGitExtras < ActiveRecord::Migration
       t.boolean :git_annex,        default: false
       t.boolean :protected_branch, default: false
       t.boolean :public_repo,      default: false
+      t.text    :urls_order
       t.string  :key
     end
 
     add_index :repository_git_extras, :repository_id, unique: true
-  end
-
-  def down
-    drop_table :repository_git_extras
   end
 end

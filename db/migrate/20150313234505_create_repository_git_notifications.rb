@@ -1,5 +1,5 @@
 class CreateRepositoryGitNotifications < ActiveRecord::Migration
-  def up
+  def change
     create_table :repository_git_notifications do |t|
       t.integer :repository_id
       t.string  :prefix
@@ -9,9 +9,5 @@ class CreateRepositoryGitNotifications < ActiveRecord::Migration
     end
 
     add_index :repository_git_notifications, :repository_id, unique: true
-  end
-
-  def down
-    drop_table :repository_git_notifications
   end
 end

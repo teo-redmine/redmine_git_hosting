@@ -1,5 +1,5 @@
 class CreateRepositoryGitConfigKeys < ActiveRecord::Migration
-  def up
+  def change
     create_table :repository_git_config_keys do |t|
       t.integer :repository_id
       t.string  :key
@@ -8,9 +8,5 @@ class CreateRepositoryGitConfigKeys < ActiveRecord::Migration
 
     add_index :repository_git_config_keys, :repository_id
     add_index :repository_git_config_keys, [ :key, :repository_id ], unique: true
-  end
-
-  def down
-    drop_table :repository_git_config_keys
   end
 end
