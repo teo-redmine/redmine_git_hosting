@@ -1,7 +1,7 @@
 /*
 PLUGIN ICONS
 */
-#admin-menu a.redmine-git-hosting { background-image: url('../images/git_icon.png'); }
+#admin-menu a.redmine-git-hosting { background-image: url('../images/git_icon.png');     background-repeat: no-repeat; padding-left: 20px;}
 
 .icon-git-logo { background-image: url('../images/git_icon.png'); padding-right: 5px; }
 .icon-clone { background-image: url('../images/clone.png'); }
